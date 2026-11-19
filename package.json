@@ -1,7 +1,7 @@
 {
   "name": "deeplx-translate",
-  "displayName": "DLX Translation Source",
-  "description": "Connects Comment Translate to a self-hosted DLX or DeepLX instance.",
+  "displayName": "DeeplX Translation Source",
+  "description": "Connects Comment Translate to a DeeplX server.",
   "version": "0.1.0",
   "publisher": "Missdrop",
   "license": "GPL-3.0-only",
@@ -34,27 +34,27 @@
     "translates": [
       {
         "translate": "dlx",
-        "title": "DLX (self-hosted)"
+        "title": "DeeplX"
       }
     ],
     "commands": [
       {
         "command": "deeplxSource.setToken",
-        "title": "DLX: Set Access Token"
+        "title": "DeeplX: Set Access Token"
       },
       {
         "command": "deeplxSource.clearToken",
-        "title": "DLX: Clear Access Token"
+        "title": "DeeplX: Clear Access Token"
       }
     ],
     "configuration": {
-      "title": "DLX Translation Source",
+      "title": "DeeplX Translation Source",
       "properties": {
         "deeplxSource.endpoint": {
           "type": "string",
           "scope": "application",
           "default": "http://127.0.0.1:1188/translate",
-          "description": "Full URL of the self-hosted DLX /translate endpoint."
+          "description": "Full URL of the DeeplX /translate endpoint."
         }
       }
     }

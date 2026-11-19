@@ -32,7 +32,7 @@ function translateLanguageCode(language) {
 function activate(context) {
     const setToken = vscode.commands.registerCommand("deeplxSource.setToken", async () => {
         const token = await vscode.window.showInputBox({
-            title: "DLX Access Token",
+            title: "DeeplX Access Token",
             password: true,
             ignoreFocusOut: true,
             validateInput: (value) => value.trim() ? undefined : "Enter an access token.",
