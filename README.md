@@ -31,3 +31,11 @@ Check that the server returns HTTP 200 with a DLX response containing `code: 200
 ## Development
 
 Run the local HTTP tests with `npm test` on Node.js 22 or later. Open this folder in VS Code and use **Debug: Start Debugging** with an **Extension Development Host** launch configuration to try it with Comment Translate.
+
+## Publishing
+
+Set `publisher` in `package.json` to the Marketplace publisher ID. In the publisher’s Trusted Publishing settings, create a policy for the GitHub repository and the workflow file `publish.yml`. Leave Environment blank. The workflow uses OIDC, so it needs no Marketplace token secret.
+
+Push a version tag matching `package.json` (for example, `v0.1.0` for version `0.1.0`). GitHub Actions checks the tag, runs the tests, packages the extension, and publishes that VSIX to the Marketplace.
+
+See the [VS Code publishing documentation](https://code.visualstudio.com/api/working-with-extensions/publishing-extension#publish-with-github-actions-and-trusted-publishing).
