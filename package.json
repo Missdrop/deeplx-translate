@@ -1,7 +1,7 @@
 {
   "name": "deeplx-translate",
   "displayName": "DeeplX Translate",
-  "description": "Connects Comment Translate to a DeeplX server.",
+  "description": "DeeplX translate source for comment-translate",
   "version": "0.1.0",
   "publisher": "Missdrop",
   "license": "GPL-3.0-only",
