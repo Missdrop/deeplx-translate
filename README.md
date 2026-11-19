@@ -1,28 +1,17 @@
 # DeeplX for Comment Translate
 
-Use your DeeplX server to translate comments and selected text in VS Code through [Comment Translate](https://marketplace.visualstudio.com/items?itemName=intellsmi.comment-translate).
-
-## Requirements
-
-Install [Comment Translate](https://marketplace.visualstudio.com/items?itemName=intellsmi.comment-translate) and make sure your DeeplX server is running.
+Translate comments and selected text through [Comment Translate](https://marketplace.visualstudio.com/items?itemName=intellsmi.comment-translate) using your DeeplX server.
 
 ## Use
 
-1. Open the Command Palette and run **DeeplX: Set Endpoint**. Enter the full address of your server’s `/translate` endpoint. You can also edit **DeeplX Source: Endpoint** in the VS Code Settings UI. The default is `http://127.0.0.1:1188/translate`.
+1. In VS Code **Settings**, search for `deeplxSource.endpoint` and enter your full `/translate` URL.
 
-2. If your server requires a token, open the Command Palette and run **DeeplX: Set Access Token**. Use an HTTPS endpoint when sending a token to a remote server. Set the token separately on each machine.
+   ![DeeplX endpoint field in VS Code Settings](images/settings.png)
 
-3. In the Command Palette, run **Comment Translate: Change translate source**.
+2. If your server requires a separate Bearer token, run **DeeplX: Set Access Token** from the Command Palette.
 
-   ![The Change translate source command in the VS Code Command Palette](images/command.png)
+3. Run **Comment Translate: Change translate source** and select **DeeplX**.
 
-4. Select **DeeplX**.
+   ![DeeplX in the Comment Translate source picker](images/source.png)
 
-   ![DeeplX selected in the Comment Translate source picker](images/source.png)
-
-5. Hover over a comment or select text and use Comment Translate to translate it. To change languages, run **Comment Translate: Change translate target language**.
-
-## Extension Settings
-
-- `deeplxSource.endpoint` — The full URL of your server’s `/translate` endpoint.
-- **DeeplX: Set Access Token** and **DeeplX: Clear Access Token** — Save or remove the token on this machine.
+4. Hover over a comment or select text and use Comment Translate.
