@@ -8,7 +8,7 @@ Install [Comment Translate](https://marketplace.visualstudio.com/items?itemName=
 
 ## Use
 
-1. In VS Code Settings, search for `deeplxSource.endpoint` and enter the full address of your server’s `/translate` endpoint. The default is `http://127.0.0.1:1188/translate`.
+1. Open the Command Palette and run **DeeplX: Set Endpoint**. Enter the full address of your server’s `/translate` endpoint. You can also edit **DeeplX Source: Endpoint** in the VS Code Settings UI. The default is `http://127.0.0.1:1188/translate`.
 
 2. If your server requires a token, open the Command Palette and run **DeeplX: Set Access Token**. Use an HTTPS endpoint when sending a token to a remote server. Set the token separately on each machine.
 

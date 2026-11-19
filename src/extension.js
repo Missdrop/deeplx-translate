@@ -30,6 +30,31 @@ function translateLanguageCode(language) {
  * @param {import("vscode").ExtensionContext} context
  */
 function activate(context) {
+    const setEndpoint = vscode.commands.registerCommand("deeplxSource.setEndpoint", async () => {
+        const config = vscode.workspace.getConfiguration("deeplxSource");
+        const endpoint = await vscode.window.showInputBox({
+            title: "DeeplX Endpoint",
+            prompt: "Enter the full URL ending in /translate.",
+            value: config.get("endpoint"),
+            ignoreFocusOut: true,
+            validateInput(value) {
+                try {
+                    new DlxClient(value.trim());
+                } catch (error) {
+                    return error.message;
+                }
+                return undefined;
+            },
+        });
+
+        if (endpoint === undefined) {
+            return;
+        }
+
+        // Use the same user setting shown in the graphical Settings editor.
+        await config.update("endpoint", endpoint.trim(), vscode.ConfigurationTarget.Global);
+    });
+
     const setToken = vscode.commands.registerCommand("deeplxSource.setToken", async () => {
         const token = await vscode.window.showInputBox({
             title: "DeeplX Access Token",
@@ -47,7 +72,7 @@ function activate(context) {
         await context.secrets.delete(TOKEN_KEY);
     });
 
-    context.subscriptions.push(setToken, clearToken);
+    context.subscriptions.push(setEndpoint, setToken, clearToken);
 
     class DlxTranslation {
         constructor() {

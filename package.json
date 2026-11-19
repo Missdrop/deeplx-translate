@@ -17,6 +17,7 @@
     "intellsmi.comment-translate"
   ],
   "activationEvents": [
+    "onCommand:deeplxSource.setEndpoint",
     "onCommand:deeplxSource.setToken",
     "onCommand:deeplxSource.clearToken"
   ],
@@ -39,6 +40,10 @@
       }
     ],
     "commands": [
+      {
+        "command": "deeplxSource.setEndpoint",
+        "title": "DeeplX: Set Endpoint"
+      },
       {
         "command": "deeplxSource.setToken",
         "title": "DeeplX: Set Access Token"
