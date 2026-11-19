@@ -1,4 +1,4 @@
-# DeeplX Translate
+# DeeplX for Comment Translate
 
 Use your DeeplX server to translate comments and selected text in VS Code through [Comment Translate](https://marketplace.visualstudio.com/items?itemName=intellsmi.comment-translate).
 

@@ -1,6 +1,6 @@
 {
   "name": "deeplx-translate",
-  "displayName": "DeeplX Translate",
+  "displayName": "DeeplX for Comment Translate",
   "description": "DeeplX translate source for comment-translate",
   "version": "0.1.1",
   "publisher": "Missdrop",
@@ -49,7 +49,7 @@
       }
     ],
     "configuration": {
-      "title": "DeeplX Translate",
+      "title": "DeeplX for Comment Translate",
       "properties": {
         "deeplxSource.endpoint": {
           "type": "string",
