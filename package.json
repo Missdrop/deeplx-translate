@@ -60,7 +60,7 @@
           "type": "string",
           "scope": "application",
           "default": "http://127.0.0.1:1188/translate",
-          "description": "Full URL of the DeeplX /translate endpoint."
+          "markdownDescription": "Full URL of the DeeplX /translate endpoint. If your server requires a separate Bearer token, [Set Access Token](command:deeplxSource.setToken)."
         }
       }
     }
