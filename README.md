@@ -8,7 +8,7 @@ Translate comments and selected text through [Comment Translate](https://marketp
 
    ![DeeplX endpoint field in VS Code Settings](images/settings.png)
 
-2. If your server requires a separate Bearer token, run **DeeplX: Set Access Token** from the Command Palette.
+2. Open the Command Palette with **Ctrl+Shift+P** (Windows/Linux) or **⌘⇧P** (macOS). If your server requires a separate Bearer token, run **DeeplX: Set Access Token**.
 
 3. Run **Comment Translate: Change translate source** and select **DeeplX**.
 
