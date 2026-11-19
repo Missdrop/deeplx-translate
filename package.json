@@ -12,6 +12,7 @@
     "Other"
   ],
   "main": "./src/extension.js",
+  "icon": "images/icon.png",
   "extensionDependencies": [
     "intellsmi.comment-translate"
   ],
