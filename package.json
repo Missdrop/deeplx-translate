@@ -4,7 +4,7 @@
   "description": "Connects Comment Translate to a self-hosted DLX or DeepLX instance.",
   "version": "0.1.0",
   "publisher": "Missdrop",
-  "license": "MIT",
+  "license": "GPL-3.0-only",
   "engines": {
     "vscode": "^1.100.0"
   },
