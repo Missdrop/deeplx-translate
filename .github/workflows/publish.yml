@@ -34,7 +34,7 @@ jobs:
         run: npm test
 
       - name: Package extension
-        run: npx --yes @vscode/vsce@4.1.1 package --allow-missing-repository --out extension.vsix
+        run: npx --yes @vscode/vsce@4.1.1 package --allow-missing-repository --baseImagesUrl "https://raw.githubusercontent.com/$GITHUB_REPOSITORY/$GITHUB_SHA/" --out extension.vsix
 
       - name: Publish extension
         run: npx --yes @vscode/vsce@4.1.1 publish --oidc --packagePath extension.vsix
