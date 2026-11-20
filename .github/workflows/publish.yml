@@ -1,4 +1,4 @@
-name: Publish to VS Code Marketplace
+name: Publish extension
 
 on:
   push:
@@ -47,3 +47,29 @@ jobs:
 
       - name: Publish extension
         run: npx --yes @vscode/vsce@4.1.1 publish --oidc --packagePath extension.vsix
+
+  release:
+    needs: publish
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+          fetch-depth: 0
+
+      - name: Create GitHub Release
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          # Walk back from the tagged commit to find the previous version on main.
+          previous_tag=$(git describe --tags --abbrev=0 --first-parent --match 'v[0-9]*' HEAD^ 2>/dev/null || true)
+          if [[ -n "$previous_tag" ]]; then
+            notes="**Full Changelog**: $GITHUB_SERVER_URL/$GITHUB_REPOSITORY/compare/$previous_tag...${GITHUB_REF_NAME}"
+          else
+            notes="**Full Changelog**: $GITHUB_SERVER_URL/$GITHUB_REPOSITORY/commits/$GITHUB_REF_NAME"
+          fi
+          gh release create "$GITHUB_REF_NAME" --verify-tag --title "$GITHUB_REF_NAME" --notes "$notes"
