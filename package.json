@@ -2,7 +2,7 @@
   "name": "deeplx-translate",
   "displayName": "DeeplX for Comment Translate",
   "description": "DeeplX translate source for comment-translate",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "publisher": "Missdrop",
   "license": "GPL-3.0-only",
   "engines": {
